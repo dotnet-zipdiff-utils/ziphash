@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="CopyFiles" ToolsVersion="4.0">
+
+	<!-- PATHS -->
+	<PropertyGroup>
+		<RootDir>$(MSBuildProjectDirectory)</RootDir>
+		<BuildDir>$(RootDir)\build</BuildDir>
+		<MSBuildCommunityTasksPath>$(RootDir)\src\packages\MSBuildTasks.1.4.0.61\tools\</MSBuildCommunityTasksPath>
+	</PropertyGroup>
+
+	<!-- IMPORTS -->
+	<Import Project="$(MSBuildCommunityTasksPath)\MSBuild.Community.Tasks.Targets" />
+
+	<!-- VERSION NUMBER -->
+	<PropertyGroup>
+		<VersionMajor>1</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionPatch>0</VersionPatch>
+		<VersionSuffix>-alpha</VersionSuffix>
+	</PropertyGroup>
+
+	<!-- CLEAN -->
+	<Target Name="Clean">
+		<RemoveDir Directories="$(BuildDir)" Condition="Exists('$(BuildDir)')" />
+		<MakeDir Directories="$(BuildDir)" />
+	</Target>
+
+	<!-- UPDATE ASSEMBLEY VERSION -->
+	<Target Name="UpdateAssemblyInfo" DependsOnTargets="Clean">
+		<Version Major="$(VersionMajor)" Minor="$(VersionMinor)" BuildType="Automatic" RevisionType="Automatic" StartDate="2013-09-30">
+			<Output TaskParameter="Build" PropertyName="Build" />
+			<Output TaskParameter="Revision" PropertyName="Revision" />
+		</Version>
+		<AssemblyInfo CodeLanguage="CS"
+			OutputFile="$(RootDir)\src\VersionInfo.cs"
+			AssemblyVersion="$(VersionMajor).$(VersionMinor).0.0"
+			AssemblyFileVersion="$(VersionMajor).$(VersionMinor).$(Build).$(Revision)"
+			AssemblyInformationalVersion="$(VersionMajor).$(VersionMinor).$(VersionPatch)$(VersionSuffix)"/>
+	</Target>
+
+	<!-- COMPILE -->
+	<Target Name="Compile" DependsOnTargets="UpdateAssemblyInfo">
+		<MSBuild Projects="$(RootDir)\src\ZipHash.sln" Properties="Configuration=Release" />
+	</Target>
+
+	<!-- COMPILE -->
+	<Target Name="NuGet" DependsOnTargets="Compile">
+		<Exec WorkingDirectory="$(RootDir)" Command="$(RootDir)\src\.nuget\NuGet.exe pack $(RootDir)\src\ZipHash\ZipHash.csproj -Properties Configuration=Release -OutputDirectory build -Tool" />
+	</Target>
+
+	<!-- COPY FILES -->
+	<Target Name="CopyFiles" DependsOnTargets="NuGet">
+		<ItemGroup>
+			<ExecFiles Include="$(RootDir)\src\ZipHash\bin\Release\ziphash.exe" />
+		</ItemGroup>
+		<Copy SourceFiles="@(ExecFiles)" DestinationFolder="$(BuildDir)" />
+	</Target>
+
+</Project>
