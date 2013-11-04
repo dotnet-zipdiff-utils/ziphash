@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+	<metadata>
+		<id>ZipHash</id>
+		<version>$version$</version>
+		<title>ZipHash</title>
+		<authors>$author$</authors>
+		<owners>$author$</owners>
+		<licenseUrl>https://github.com/leekelleher/ZipHash.NET/blob/master/LICENSE</licenseUrl>
+		<projectUrl>http://leekelleher.github.io/ZipHash.NET/</projectUrl>
+		<iconUrl>http://leekelleher.github.io/ZipHash.NET/images/icon.png</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<summary>ZipHash is a utility for generating checksum hashes for zip file entries.</summary>
+		<description>
+			<![CDATA[ZipHash is a command-line utility for generating checksum hashes for zip file entries.]]>
+		</description>
+		<copyright>Copyright &#169; 2013 Lee Kelleher</copyright>
+		<tags>ziphash zip checksum hash utility cli</tags>
+		<dependencies />
+	</metadata>
+	<files />
+</package>
