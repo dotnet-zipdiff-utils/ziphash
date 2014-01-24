@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Reflection.AssemblyVersion("1.0.0.0")]
-[assembly: System.Reflection.AssemblyFileVersion("1.0.78.33784")]
+[assembly: System.Reflection.AssemblyFileVersion("1.0.116.40921")]
 [assembly: System.Reflection.AssemblyInformationalVersion("1.0.0-alpha")]
 
 

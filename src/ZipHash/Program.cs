@@ -76,6 +76,9 @@ namespace ZipHash
 
 		static void GenerateHashes(FileInfo file)
 		{
+			// TODO: [LK] set options to update/overwrite a checksum file
+			// TODO: [LK] set options to specify which algorithms to use
+
 			var generator = new ZipHash.Core.HashGenerator(file, new HashAlgorithm[] { MD5.Create(), SHA1.Create() });
 			generator.GenerateHashes();
 
