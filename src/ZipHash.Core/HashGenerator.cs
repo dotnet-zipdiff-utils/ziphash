@@ -79,7 +79,7 @@ namespace ZipHash.Core
 					x => x.Key,
 					x => zipFile
 						.Cast<ZipEntry>()
-						.Select(e => string.Format("{1} {0}", e.Name, ConvertHash(x.Value, zipFile.GetInputStream(e))))
+						.Select(e => string.Format("{1}  {0}", e.Name, ConvertHash(x.Value, zipFile.GetInputStream(e))))
 						.ToArray());
 			}
 			finally
