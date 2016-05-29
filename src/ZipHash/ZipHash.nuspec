@@ -6,16 +6,16 @@
 		<title>ZipHash</title>
 		<authors>$author$</authors>
 		<owners>$author$</owners>
-		<licenseUrl>https://github.com/leekelleher/ZipHash.NET/blob/master/LICENSE</licenseUrl>
-		<projectUrl>http://leekelleher.github.io/ZipHash.NET/</projectUrl>
-		<iconUrl>http://leekelleher.github.io/ZipHash.NET/images/icon.png</iconUrl>
+		<licenseUrl>https://github.com/dotnet-zipdiff-utils/ziphash/blob/master/LICENSE.md</licenseUrl>
+		<projectUrl>https://github.com/dotnet-zipdiff-utils/ziphash</projectUrl>
+		<iconUrl>https://raw.githubusercontent.com/dotnet-zipdiff-utils/ziphash/master/docs/dotnet-ziphash.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<summary>ZipHash is a utility for generating checksum hashes for zip file entries.</summary>
 		<description>
 			<![CDATA[ZipHash is a command-line utility for generating checksum hashes for zip file entries.]]>
 		</description>
-		<copyright>Copyright &#169; 2013 Lee Kelleher</copyright>
-		<tags>ziphash zip checksum hash utility cli</tags>
+		<copyright>Copyright &#169; 2016 Lee Kelleher</copyright>
+		<tags>ziphash zip checksum hash utility cli console</tags>
 		<dependencies />
 	</metadata>
 	<files />

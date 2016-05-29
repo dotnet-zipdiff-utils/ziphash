@@ -26,11 +26,11 @@ Valid options are:
 	--verbose                     Print detail messages.
 
 ## References
-This version can be found at https://github.com/leekelleher/ZipHash.NET
+This version can be found at <https://github.com/dotnet-zipdiff-utils/ziphash>
 
 ## License
 Copyright &copy; 2013 Lee Kelleher<br/>
 
 This project is licensed under [MIT](http://opensource.org/licenses/MIT).
 
-Please see [LICENSE](LICENSE) for further details.
+Please see [LICENSE](LICENSE.md) for further details.

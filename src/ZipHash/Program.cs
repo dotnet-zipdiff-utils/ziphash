@@ -21,8 +21,10 @@ namespace ZipHash
 
 		static void Main(string[] args)
 		{
+			OutputLogo();
+
 			options = new Options();
-			if (!CommandLine.Parser.Default.ParseArguments(args, options))
+			if (!CommandLine.Parser.Default.ParseArguments(args, options) || string.IsNullOrWhiteSpace(options.Path))
 			{
 				Console.WriteLine("No zip file(s) have been specified.");
 				Environment.Exit(EXITCODE_ERROR);
@@ -192,6 +194,20 @@ namespace ZipHash
 				.ToString(hash)
 				.Replace("-", string.Empty)
 				.ToLower();
+		}
+
+		static void OutputLogo()
+		{
+			Console.WriteLine(@"
+  _______       _    _           _     
+ |___  (_)     | |  | |         | |    
+    / / _ _ __ | |__| | __ _ ___| |__  
+   / / | | '_ \|  __  |/ _` / __| '_ \ 
+  / /__| | |_) | |  | | (_| \__ \ | | |
+ /_____|_| .__/|_|  |_|\__,_|___/_| |_|
+         | |                           
+         |_|                           
+");
 		}
 	}
 }

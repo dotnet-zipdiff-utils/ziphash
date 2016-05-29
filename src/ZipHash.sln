@@ -1,11 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipHash", "ZipHash\ZipHash.csproj", "{6FE33A25-D41B-4223-8FDB-ADAD22A46996}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{954E44F5-32E7-4477-BC78-9F1D8F5A9B0C}"
 	ProjectSection(SolutionItems) = preProject
-		..\LICENSE = ..\LICENSE
+		..\CONTRIBUTING.md = ..\CONTRIBUTING.md
+		..\LICENSE.md = ..\LICENSE.md
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
@@ -23,6 +26,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{A21689E7-88AE-405F-AA12-9496E02D8DF8}"
 	ProjectSection(SolutionItems) = preProject
 		..\build.proj = ..\build.proj
+		ZipHash\ZipHash.nuspec = ZipHash\ZipHash.nuspec
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipHash.Core", "ZipHash.Core\ZipHash.Core.csproj", "{602B865A-6BE4-4FD2-B051-FD2CE27E510C}"
@@ -51,8 +55,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5223EA53-EC24-4807-8FE2-69FE552FC987} = {954E44F5-32E7-4477-BC78-9F1D8F5A9B0C}
+		{41E44DF9-9FEF-4620-8B99-28975FB8A22D} = {5223EA53-EC24-4807-8FE2-69FE552FC987}
 		{9A966242-D10B-4A3E-8A15-14525928E410} = {954E44F5-32E7-4477-BC78-9F1D8F5A9B0C}
 		{A21689E7-88AE-405F-AA12-9496E02D8DF8} = {954E44F5-32E7-4477-BC78-9F1D8F5A9B0C}
-		{41E44DF9-9FEF-4620-8B99-28975FB8A22D} = {5223EA53-EC24-4807-8FE2-69FE552FC987}
 	EndGlobalSection
 EndGlobal

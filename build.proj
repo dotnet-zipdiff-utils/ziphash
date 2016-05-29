@@ -16,7 +16,7 @@
 		<VersionMajor>1</VersionMajor>
 		<VersionMinor>0</VersionMinor>
 		<VersionPatch>0</VersionPatch>
-		<VersionSuffix>-alpha</VersionSuffix>
+		<VersionSuffix>-beta</VersionSuffix>
 	</PropertyGroup>
 
 	<!-- CLEAN -->
@@ -33,8 +33,7 @@
 		</Version>
 		<AssemblyInfo CodeLanguage="CS"
 			OutputFile="$(RootDir)\src\VersionInfo.cs"
-			AssemblyVersion="$(VersionMajor).$(VersionMinor).0.0"
-			AssemblyFileVersion="$(VersionMajor).$(VersionMinor).$(Build).$(Revision)"
+			AssemblyVersion="$(VersionMajor).$(VersionMinor).*"
 			AssemblyInformationalVersion="$(VersionMajor).$(VersionMinor).$(VersionPatch)$(VersionSuffix)"/>
 	</Target>
 
