@@ -1,5 +1,7 @@
 # ZipHash
 
+<img align="right" src="docs/dotnet-ziphash.png">
+
 Use the ZipHash tool when you need to generate checksum hashes for the contents and entries of zip file(s).
 
 Run it as a standalone executable. The tool supports 3 hash formats: SFV, MD5 and SHA1.
