@@ -1,10 +1,9 @@
-﻿using System;
+﻿using System.IO;
 using System.Linq;
-using System.IO;
+using System.Security.Cryptography;
 using System.Text;
 using ICSharpCode.SharpZipLib.Zip;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Security.Cryptography;
 
 namespace ZipHash.Core.UnitTests
 {
@@ -60,7 +59,7 @@ namespace ZipHash.Core.UnitTests
 
 				foreach (var hash in hashes)
 				{
-					Assert.AreEqual(hash.Value.FirstOrDefault(), "c9a34cfc85d982698c6ac89f76071abd A");
+					Assert.AreEqual(hash.Value.FirstOrDefault(), "c9a34cfc85d982698c6ac89f76071abd  A");
 				}
 			}
 
@@ -74,7 +73,7 @@ namespace ZipHash.Core.UnitTests
 					testZipOS.PutNextEntry(entry1);
 
 					var data = new string(c, 1024);
-					var bytes = UTF8Encoding.UTF8.GetBytes(data);
+					var bytes = Encoding.UTF8.GetBytes(data);
 					foreach (var bit in bytes)
 						testZipOS.WriteByte(bit);
 
